@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Check Order</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+<div class="brand">
+<img src="assets/logo.svg" alt="Amazon Africa logo" class="logo">
+<h1>Amazon<span class="accent">Africa</span></h1>
+</div>
+<nav class="main-nav">
+<a href="index.html">Home</a>
+<a href="orders.html">Orders</a>
+<a href="account.html">Account</a>
+<a href="cart.html">Cart</a>
+<a href="contact.html">Contact</a>
+</nav>
+</header>
+
+<main class="container">
+<h2>Order Status</h2>
+
+<p id="tracking-display">Your tracking ID: <span id="tracking-id">---</span></p>
+<p id="order-result">Fetching order details...</p>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const tid = params.get("tracking_id") || "---";
+document.getElementById("tracking-id").textContent = tid;
+// Mock result display
+document.getElementById("order-result").textContent = "Order Status: Shipped\nExpected Delivery: 2 days";
+</script>
+
+</main>
+</body>
+</html>
